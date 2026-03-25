@@ -10,8 +10,8 @@ import datetime
 # UI Setup
 # ---------------------------------------------------------
 st.set_page_config(page_title="SAKURA Cottage Chatbot", page_icon="🌸", layout="wide")
-st.title("🌸 SAKURA Cottage チャットボット")
-st.caption("SAKURA Cottage の宿泊ルールや設備、周辺観光地についてお答えします。")
+st.title("🌸 SAKURA Cottage Izukogen chatbot/チャットボット")
+st.caption("SAKURAコテージ伊豆高原の宿泊ルールや設備、周辺観光地についてお答えします。We will answer your questions regarding the rules, facilities, and surrounding tourist attractions at SAKURA Cottage Izu Kogen. Please enter your information in your language.")
 
 # ---------------------------------------------------------
 # API Key Configuration
