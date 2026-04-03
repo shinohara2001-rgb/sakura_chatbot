@@ -15,12 +15,19 @@ hide_streamlit_style = """
 <style>
 [data-testid="stToolbar"] {visibility: hidden !important; display: none !important;}
 header {visibility: hidden !important; display: none !important;}
+.stChatInput textarea::placeholder {
+    color: #555555 !important;
+    opacity: 1 !important;
+}
 </style>
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 st.title("🌸 SAKURA Cottage Izukoge Concierge")
-st.caption("SAKURAコテージ伊豆高原の宿泊ルールや設備、おすすめの周辺観光地についてお答えします。This page will answer your questions about the rules, facilities, and recommended nearby tourist attractions at SAKURA Cottage Izu Kogen. Please enter your information in your preferred language.")
+st.markdown(
+    '<p style="font-size: 1.15rem; color: #333333;">SAKURAコテージ伊豆高原の宿泊ルールや設備、おすすめの周辺観光地についてお答えします。<br>This page will answer your questions about the rules, facilities, and recommended nearby tourist attractions at SAKURA Cottage Izu Kogen. Please enter your information in your preferred language.</p>',
+    unsafe_allow_html=True
+)
 
 # ---------------------------------------------------------
 # API Key Configuration
@@ -90,7 +97,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # User input
-if prompt := st.chat_input("質問を入力してください（例：チェックインの手順は？）"):
+if prompt := st.chat_input("質問を入力してください（例1：停電しました。例2：おすすめの周辺観光地は？）"):
     # Add user message to UI
     with st.chat_message("user"):
         st.markdown(prompt)
